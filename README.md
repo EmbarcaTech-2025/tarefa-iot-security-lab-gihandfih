@@ -36,11 +36,10 @@ mosquitto -v
 
 Saída esperada:
 
-```
-mosquitto version 2.x.x starting
-...
-mosquitto running
-```
+
+![image](https://github.com/user-attachments/assets/a957fdd2-c468-4a6c-8f42-0f6055e1f8a4)
+
+
 
 ---
 
