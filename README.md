@@ -42,15 +42,29 @@ Saída esperada:
 
 ---
 
-### ⚙️ **2. Alterando o arquivo .conf e criando o arquivo de senha**
+### ⚙️ **2. Criando o arquivo de senha e Alterando o arquivo .conf **
 
 Arquivo: `mosquitto.conf`
 
+* Criando o arquivo de senha
+![image](https://github.com/user-attachments/assets/668663e3-2602-4912-b8a8-0342662ed447)
+* Arquivo de senha criado
+![image](https://github.com/user-attachments/assets/9e01713b-5a28-4c18-b49f-84af3f2d2cda)
 * Edita o arquivo mosquitto.conf 
 ![image](https://github.com/user-attachments/assets/a94c0051-3758-46ae-9b69-4e0c594f565e)
-
+* Verificando se deu certo
+![image](https://github.com/user-attachments/assets/b64f5dd9-c026-4651-be9b-82bdce610b55)
 
 ---
+
+### ⚙️ **3. Escutando o tópico com Mosquitto **
+
+* Publisher. Terminal adicional aberto com o comando:
+![Captura de tela 2025-05-26 190327333333](https://github.com/user-attachments/assets/5780ce92-89fd-4f27-91f8-ff92460e555d)
+* Subscriber.  Mostra mensagens publicadas pelo ...:
+![Captura de tela 2025-05-26 190327222](https://github.com/user-attachments/assets/7c51ac63-1220-4398-be1d-7730ee1d0e72)
+
+
 ---
 
 ### ⚙️ **2. Código no ... (usando LWIP MQTT)**
@@ -76,39 +90,6 @@ mqtt_publish(client, "escola/sala1/temperatura", data, len, 0, 0, mqtt_pub_reque
 
 ---
 
-### 📡 **4. Broker Mosquitto rodando no PC**
-
-* Iniciado com o comando:
-
-```bash
-mosquitto -v
-```
-
-* Mostra mensagens no console como:
-
-```
-New connection from ...
-Received PUBLISH from ... ...
-```
-
----
-
-### 🔍 **5. Escutando o tópico com Mosquitto**
-
-Terminal adicional aberto com o comando:
-
-```bash
-mosquitto_sub -h 127.0.0.1 -t escola/sala1/temperatura
-```
-
-* Mostra mensagens publicadas pelo ...:
-
-```
-26.3
-26.4
-```
-
----
 
 ### 🔪 Testes
 
