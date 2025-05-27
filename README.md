@@ -92,7 +92,7 @@ Terminal adicional aberto com o comando:
 mosquitto_sub -h 127.0.0.1 -t escola/sala1/temperatura
 ```
 
-* Mostra mensagens publicadas pelo ESP32:
+* Mostra mensagens publicadas pelo ...:
 
 ```
 26.3
@@ -110,7 +110,7 @@ mosquitto_sub -h 127.0.0.1 -t escola/sala1/temperatura
 
 ### 📝 Conclusão
 
-A integração ESP32 + MQTT + Mosquitto foi realizada com sucesso. O ESP32 é capaz de se conectar a um broker local e publicar dados, que são recebidos pelo PC.
+A integração ... + MQTT + Mosquitto foi realizada com sucesso. O ... é capaz de se conectar a um broker local e publicar dados, que são recebidos pelo PC.
 
 ---
 
