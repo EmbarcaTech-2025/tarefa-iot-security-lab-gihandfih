@@ -44,7 +44,7 @@ mosquitto running
 
 ---
 
-### ⚙️ **2. Código no ESP32 (usando LWIP MQTT)**
+### ⚙️ **2. Código no ... (usando LWIP MQTT)**
 
 Arquivo: `mqtt_comm.c`
 
@@ -60,7 +60,7 @@ mqtt_publish(client, "escola/sala1/temperatura", data, len, 0, 0, mqtt_pub_reque
 
 ---
 
-### 📦 **3. Conexão ESP32 com o Wi-Fi**
+### 📦 **3. Conexão ... com o Wi-Fi**
 
 * O ESP32 foi configurado com SSID e senha locais.
 * Após conexão, ele inicia o cliente MQTT automaticamente.
@@ -79,7 +79,7 @@ mosquitto -v
 
 ```
 New connection from ...
-Received PUBLISH from ESP32...
+Received PUBLISH from ... ...
 ```
 
 ---
