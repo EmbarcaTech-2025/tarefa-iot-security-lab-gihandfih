@@ -67,19 +67,9 @@ Arquivo: `mosquitto.conf`
 
 ---
 
-### ⚙️ **2. Código no ... (usando LWIP MQTT)**
+### ⚙️ **4.  Simulando criptografia leve (XOR)**
 
-Arquivo: `mqtt_comm.c`
 
-* Configura conexão com broker local (ex: IP `192.168.0.100`)
-* Publica mensagens no tópico: `escola/sala1/temperatura`
-
-Trecho principal do código:
-
-```c
-mqtt_client_connect(client, &broker_addr, 1883, mqtt_connection_cb, NULL, &ci);
-mqtt_publish(client, "escola/sala1/temperatura", data, len, 0, 0, mqtt_pub_request_cb, NULL);
-```
 
 ---
 
@@ -91,16 +81,18 @@ mqtt_publish(client, "escola/sala1/temperatura", data, len, 0, 0, mqtt_pub_reque
 ---
 
 
-### 🔪 Testes
+###  Questionamentos
 
-* Testado envio de dados numéricos (temperatura simulada)
-* Mensagens recebidas corretamente no terminal Mosquitto
+* Quais técnicas são escaláveis?
+
+* Como aplicá-las com várias BitDogLab em rede escolar?
+
 
 ---
 
 ### 📝 Conclusão
 
-A integração ... + MQTT + Mosquitto foi realizada com sucesso. O ... é capaz de se conectar a um broker local e publicar dados, que são recebidos pelo PC.
+A integração ... + MQTT + Mosquitto foi realizada com sucesso. O ... é capaz de se conectar a um broker local e publicar dados, que são recebidos pelo PC....
 
 ---
 
