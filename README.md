@@ -40,7 +40,17 @@ Saída esperada:
 ![image](https://github.com/user-attachments/assets/a957fdd2-c468-4a6c-8f42-0f6055e1f8a4)
 
 
+---
 
+### ⚙️ **2. Alterando o arquivo .conf e criando o arquivo de senha**
+
+Arquivo: `mosquitto.conf`
+
+* Edita o arquivo mosquitto.conf 
+![image](https://github.com/user-attachments/assets/a94c0051-3758-46ae-9b69-4e0c594f565e)
+
+
+---
 ---
 
 ### ⚙️ **2. Código no ... (usando LWIP MQTT)**
