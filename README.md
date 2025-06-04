@@ -17,7 +17,6 @@ Este projeto demonstra a comunicação segura entre uma **placa BitDogLab (com R
 
 ---
 ```markdown
-```
 tarefa-iot-security-lab-gihandfih/
 ├── CMakeLists.txt              # Script de build para compilar o projeto (Pico SDK)
 ├── iot_security_lab.c          # Arquivo principal da sua aplicação (onde a lógica principal estará)
@@ -32,7 +31,7 @@ tarefa-iot-security-lab-gihandfih/
     ├── wifi_conn.c             # Implementação das funções de conexão Wi-Fi
     └── xor_cipher.c            # Implementação das funções de criptografia XOR
 ```
-```
+
 
 ---
 
