@@ -16,9 +16,8 @@
 Este projeto demonstra a comunicação segura entre uma **placa BitDogLab (com Raspberry Pi Pico W)** e um **broker MQTT (Mosquitto)**. A BitDogLab atua como um dispositivo IoT, enviando dados (como temperatura) para um tópico MQTT. O Mosquitto, rodando em um computador, recebe e exibe essas mensagens, enquanto exploramos diversas camadas de segurança.
 
 ---
-
+```markdown
 ```
-
 tarefa-iot-security-lab-gihandfih/
 ├── CMakeLists.txt              # Script de build para compilar o projeto (Pico SDK)
 ├── iot_security_lab.c          # Arquivo principal da sua aplicação (onde a lógica principal estará)
@@ -32,7 +31,7 @@ tarefa-iot-security-lab-gihandfih/
     ├── mqtt_comm.c             # Implementação das funções de comunicação MQTT
     ├── wifi_conn.c             # Implementação das funções de conexão Wi-Fi
     └── xor_cipher.c            # Implementação das funções de criptografia XOR
-
+```
 ```
 
 ---
