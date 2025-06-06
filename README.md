@@ -177,7 +177,7 @@ Para o teste, três janelas de terminal foram abertas simultaneamente:
 	
 *Uma imagem composta de três seções: a parte superior exibe a interface do Wireshark com pacotes MQTT capturados e filtrados, mostrando detalhes do pacote selecionado. A parte inferior esquerda mostra o terminal da BitDogLab publicando dados. A parte inferior direita exibe o terminal do `mosquitto_sub` recebendo os dados publicados.*
 
-    ![image](https://github.com/user-attachments/assets/c1e90e3a-08c8-4231-bc43-6e9cb6d212b3)
+	![Image](https://github.com/user-attachments/assets/b808c271-0ee8-4706-ad4f-164b8259a27c)
 
 Nesta figura, observamos:
 
