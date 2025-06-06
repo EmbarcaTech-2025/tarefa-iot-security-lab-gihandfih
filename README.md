@@ -156,7 +156,7 @@ Antes do envio da mensagem (publicação), o broker Mosquitto foi inicializado c
 
 *Captura de tela do terminal mostrando o broker Mosquitto iniciado e conectado, indicando a porta de escuta e o registro de eventos de conexão e mensagens.*
 
-	![picture2](https://github.com/user-attachments/assets/374f589a-e3b5-4afd-91f4-c66639e73fe9)
+	![image](https://github.com/user-attachments/assets/374f589a-e3b5-4afd-91f4-c66639e73fe9)
 
 O terminal do subscriber mostra os valores recebidos sem criptografia. A saída serial da **BitDogLab** confirma a publicação realizada. Além disso, o **Wireshark** foi utilizado para capturar e analisar os pacotes MQTT, exibindo o timestamp, os endereços de origem e destino, o protocolo e o tópico MQTT ("escola/sala1/temperatura").
 
@@ -177,7 +177,7 @@ Para o teste, três janelas de terminal foram abertas simultaneamente:
 	
 *Uma imagem composta de três seções: a parte superior exibe a interface do Wireshark com pacotes MQTT capturados e filtrados, mostrando detalhes do pacote selecionado. A parte inferior esquerda mostra o terminal da BitDogLab publicando dados. A parte inferior direita exibe o terminal do `mosquitto_sub` recebendo os dados publicados.*
 
-	![Image-ok](https://github.com/user-attachments/assets/c1e90e3a-08c8-4231-bc43-6e9cb6d212b3)
+	![image](https://github.com/user-attachments/assets/c1e90e3a-08c8-4231-bc43-6e9cb6d212b3)
 
 Nesta figura, observamos:
 
