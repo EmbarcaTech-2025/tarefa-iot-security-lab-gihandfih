@@ -152,9 +152,10 @@ Nesta seção, realizamos uma publicação de mensagem em texto claro via MQTT, 
 
 **Publicação e Recebimento do Pacote MQTT:**
 
-Antes do envio da mensagem (publicação), o broker Mosquitto foi inicializado com o comando `mosquitto -v` via terminal.
+Antes do envio da mensagem (publicação), o broker Mosquitto foi inicializado com o comando 'mosquitto -v' via terminal.
 
 *Captura de tela do terminal mostrando o broker Mosquitto iniciado e conectado, indicando a porta de escuta e o registro de eventos de conexão e mensagens.*
+
 	![picture](https://github.com/user-attachments/assets/374f589a-e3b5-4afd-91f4-c66639e73fe9)
 
 O terminal do subscriber mostra os valores recebidos sem criptografia. A saída serial da **BitDogLab** confirma a publicação realizada. Além disso, o **Wireshark** foi utilizado para capturar e analisar os pacotes MQTT, exibindo o timestamp, os endereços de origem e destino, o protocolo e o tópico MQTT ("escola/sala1/temperatura").
