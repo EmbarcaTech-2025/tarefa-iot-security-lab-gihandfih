@@ -17,7 +17,7 @@ Este projeto demonstra a comunicação segura entre uma **placa BitDogLab (com R
 
 ---
 
-```
+```markdown
 
 tarefa-iot-security-lab-gihandfih/
 ├── CMakeLists.txt              # Script de build para compilar o projeto (Pico SDK)
