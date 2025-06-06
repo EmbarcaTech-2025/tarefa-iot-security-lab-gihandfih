@@ -154,7 +154,7 @@ Nesta seção, realizamos uma publicação de mensagem em texto claro via MQTT, 
 
 Antes do envio da mensagem (publicação), o broker Mosquitto foi inicializado com o comando `mosquitto -v` via terminal.
 
-	![Image](https://github.com/user-attachments/assets/374f589a-e3b5-4afd-91f4-c66639e73fe9)
+	![picture](https://github.com/user-attachments/assets/374f589a-e3b5-4afd-91f4-c66639e73fe9)
 
 *Captura de tela do terminal mostrando o broker Mosquitto iniciado e conectado, indicando a porta de escuta e o registro de eventos de conexão e mensagens.*
 
@@ -174,7 +174,7 @@ O terminal do subscriber mostra os valores recebidos sem criptografia. A saída 
 
 Para o teste, três janelas de terminal foram abertas simultaneamente:
 
-    ![Image](https://github.com/user-attachments/assets/c1e90e3a-08c8-4231-bc43-6e9cb6d212b3)
+	![Image](https://github.com/user-attachments/assets/c1e90e3a-08c8-4231-bc43-6e9cb6d212b3)
 
 *Uma imagem composta de três seções: a parte superior exibe a interface do Wireshark com pacotes MQTT capturados e filtrados, mostrando detalhes do pacote selecionado. A parte inferior esquerda mostra o terminal da BitDogLab publicando dados. A parte inferior direita exibe o terminal do `mosquitto_sub` recebendo os dados publicados.*
 
