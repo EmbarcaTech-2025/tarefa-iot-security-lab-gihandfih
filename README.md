@@ -1,6 +1,6 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/G8V_0Zaq)
 
-
+```markdown
 # Tarefa: IoT Security Lab - EmbarcaTech 2025
 **Autor**: Filipe Alves de Sousa e Giovana Ferreira Santos
 **Curso**: Residência Tecnológica em Sistemas Embarcados
@@ -16,7 +16,9 @@
 Este projeto demonstra a comunicação segura entre uma **placa BitDogLab (com Raspberry Pi Pico W)** e um **broker MQTT (Mosquitto)**. A BitDogLab atua como um dispositivo IoT, enviando dados (como temperatura) para um tópico MQTT. O Mosquitto, rodando em um computador, recebe e exibe essas mensagens, enquanto exploramos diversas camadas de segurança.
 
 ---
-```markdown
+
+```
+
 tarefa-iot-security-lab-gihandfih/
 ├── CMakeLists.txt              # Script de build para compilar o projeto (Pico SDK)
 ├── iot_security_lab.c          # Arquivo principal da sua aplicação (onde a lógica principal estará)
@@ -30,8 +32,8 @@ tarefa-iot-security-lab-gihandfih/
     ├── mqtt_comm.c             # Implementação das funções de comunicação MQTT
     ├── wifi_conn.c             # Implementação das funções de conexão Wi-Fi
     └── xor_cipher.c            # Implementação das funções de criptografia XOR
-```
 
+````
 
 ---
 
@@ -152,7 +154,7 @@ Nesta seção, realizamos uma publicação de mensagem em texto claro via MQTT, 
 
 Antes do envio da mensagem (publicação), o broker Mosquitto foi inicializado com o comando `mosquitto -v` via terminal.
 
-	![Image](https://github.com/user-attachments/assets/b808c271-0ee8-4706-ad4f-164b8259a27c)
+	![Image](https://github.com/user-attachments/assets/374f589a-e3b5-4afd-91f4-c66639e73fe9)
 
 *Captura de tela do terminal mostrando o broker Mosquitto iniciado e conectado, indicando a porta de escuta e o registro de eventos de conexão e mensagens.*
 
@@ -175,8 +177,6 @@ Para o teste, três janelas de terminal foram abertas simultaneamente:
     ![Image](https://github.com/user-attachments/assets/c1e90e3a-08c8-4231-bc43-6e9cb6d212b3)
 
 *Uma imagem composta de três seções: a parte superior exibe a interface do Wireshark com pacotes MQTT capturados e filtrados, mostrando detalhes do pacote selecionado. A parte inferior esquerda mostra o terminal da BitDogLab publicando dados. A parte inferior direita exibe o terminal do `mosquitto_sub` recebendo os dados publicados.*
-
-![Image](https://github.com/user-attachments/assets/b808c271-0ee8-4706-ad4f-164b8259a27c)
 
 Nesta figura, observamos:
 
@@ -362,54 +362,56 @@ Na parte inferior, temos a `bitdoglab2`, que atua tanto como publisher quanto co
 -----
 
 ### 📝 Conclusão
-A concretização deste projeto demonstrou a viabilidade da comunicação segura entre a **BitDogLab (equipada com Raspberry Pi Pico W)** e um **broker MQTT (Mosquitto)**. Conseguimos estabelecer uma conexão eficiente, permitindo que a BitDogLab publicasse dados de forma confiável em um broker local. Ao longo do processo, exploramos e implementamos, com uma abordagem didática e embasamento científico, pilares essenciais da segurança em IoT, como a **autenticação de clientes**, a **criptografia de dados (utilizando XOR para fins demonstrativos)** e mecanismos para **proteção contra ataques de replay**. Este trabalho serve como um ponto de partida robusto para o desenvolvimento de sistemas IoT mais resilientes e protegidos.
 
----
+A integração da **BitDogLab (com Raspberry Pi Pico W)** com o MQTT e o broker Mosquitto foi realizada com sucesso. A BitDogLab é capaz de se conectar a um broker local e publicar dados de forma eficiente. Exploramos e implementamos, de forma didática e com rigor científico, conceitos essenciais de segurança, como autenticação de cliente e criptografia leve (XOR), além de abordagens para proteção contra ataques de replay. Este projeto serve como uma base sólida para o desenvolvimento de sistemas IoT mais seguros e confiáveis.
 
-## Estratégias de Segurança e Escalabilidade para Redes IoT com BitDogLab e Raspberry Pi Pico W
+-----
 
-A utilização de plataformas como a **BitDogLab**, que integram a **Raspberry Pi Pico W**, abre caminho para a construção de infraestruturas de IoT que são tanto escaláveis quanto seguras. A seguir, detalhamos abordagens fundamentais para assegurar a robustez e a expansão de uma rede sem comprometer seus aspectos de segurança.
+## Relato e Análise da Segurança e Escalabilidade em Redes IoT com BitDogLab e Raspberry Pi Pico W
 
----
+O uso de dispositivos como o **BitDogLab**, integrados com a **Raspberry Pi Pico W**, possibilita a criação de uma infraestrutura escalável e segura para redes IoT. Abaixo, detalhamos técnicas essenciais para garantir a confiabilidade e a expansão da rede sem comprometer a segurança.
 
-### Soluções para Escalabilidade e Robustez
+-----
 
-Para que um sistema IoT mantenha sua funcionalidade e performance mesmo com centenas de dispositivos conectados, é imperativo adotar práticas que garantam tanto a segurança quanto a eficiência:
+### Técnicas Escaláveis
 
-* **Identidade Única e Autenticação no Broker MQTT**: Cada **BitDogLab** é configurada com uma identidade exclusiva no broker MQTT. Essa abordagem garante que apenas dispositivos devidamente autenticados possam interagir com a rede, fortalecendo a **rastreabilidade** e prevenindo **conexões não autorizadas**.
-* **Organização Hierárquica de Tópicos MQTT**: A estrutura de tópicos MQTT é organizada de forma lógica e escalável, seguindo um modelo como `escola/sala/bancada/dispositivo`. Isso otimiza o gerenciamento de um grande volume de dispositivos, simplificando a expansão da rede.
-* **Criptografia Leve e Eficiente (Ex: ChaCha20-Poly1305)**: Embora tenhamos utilizado a criptografia XOR para fins de aprendizado, para cenários de produção, algoritmos como o **ChaCha20-Poly1305** são mais recomendados. Sua leveza e eficiência o tornam ideal para dispositivos embarcados com recursos limitados, como a **Raspberry Pi Pico W**, oferecendo alta segurança sem comprometer o desempenho. A escolha do algoritmo criptográfico é crucial para equilibrar segurança e os recursos de hardware disponíveis.
-* **Mitigação de Ataques de Replay com Timestamps**: Cada mensagem transmitida incorpora um **carimbo de tempo (timestamp)**. Esse mecanismo assegura a **unicidade** da mensagem, defendendo-a contra ataques de replay, onde mensagens antigas são retransmitidas para enganar o sistema. Isso é feito sem a necessidade de manter estados complexos, o que é vantajoso para dispositivos com memória limitada.
+Para garantir que o sistema IoT se mantenha funcional mesmo com centenas de dispositivos conectados, é essencial adotar práticas seguras e eficientes:
 
----
+  * **Autenticação Única no Broker MQTT**: Cada **BitDogLab** recebe uma identidade exclusiva durante a configuração do broker MQTT. Isso permite que apenas dispositivos autenticados participem da rede, reforçando a rastreabilidade e evitando conexões indesejadas.
+  * **Uso de Tópicos MQTT Hierárquicos**: A organização da estrutura MQTT segue um padrão lógico, como `escola/sala/bancada/dispositivo`, permitindo o gerenciamento eficiente de múltiplos dispositivos e facilitando a escalabilidade da rede.
+  * **Criptografia ChaCha20-Poly1305**: Embora a criptografia XOR tenha sido utilizada para demonstração, o algoritmo ChaCha20-Poly1305 é leve e eficiente, sendo ideal para dispositivos embarcados como a **Raspberry Pi Pico W**. Ele proporciona alta segurança mesmo em hardware com poder de processamento limitado, tornando-o uma escolha mais adequada para ambientes de produção.
+  * **Proteção Anti-Replay com Timestamps**: Cada mensagem transmitida inclui um carimbo de tempo (timestamp), garantindo que ela seja única e evitando ataques de replay, sem a necessidade de armazenamento de estados complexos.
 
-### Implementação em Ambientes Acadêmicos (Rede Escolar)
+-----
 
-A integração de múltiplas **BitDogLab com Raspberry Pi Pico W** em um ambiente educacional exige um planejamento minucioso em termos de infraestrutura, gerenciamento e fases de implementação.
+### Aplicação em Rede Escolar
+
+Para integrar várias **BitDogLab com Raspberry Pi Pico W** em um ambiente acadêmico, é necessário um planejamento cuidadoso da infraestrutura, gerenciamento e implementação.
 
 #### Infraestrutura
 
-* **Dispositivos Locais como Gateways**: A utilização de algumas **BitDogLab** como publishers e subscribers em um nível local pode otimizar a comunicação, agindo como mini-gateways para concentrar e retransmitir dados, reduzindo a latência da rede.
-* **Segmentação da Rede Wi-Fi**: A criação de redes Wi-Fi segmentadas por níveis de acesso (ex: básico, avançado, demonstrativo) é fundamental para isolar funções e fortalecer a segurança, limitando o impacto de possíveis vulnerabilidades.
-* **Broker MQTT Centralizado e Robusto**: Um broker MQTT central deve ser o coração da comunicação. Ele deve ser configurado para gerenciar o **fluxo de dados (rate limiting)**, garantir a **Qualidade de Serviço (QoS)** adequada para diferentes tipos de mensagens e, idealmente, atuar como uma **Autoridade Certificadora (CA)** para o provisionamento seguro de novos dispositivos.
+  * **Servidores Locais**: Utilização de **BitDogLab** atuando como publishers e subscribers para otimizar a comunicação e reduzir a latência.
+  * **Segmentação da Rede Wi-Fi**: Criação de diferentes níveis de acesso à rede Wi-Fi (básico, avançado, demonstrativo), garantindo isolamento de funções e segurança.
+  * **Broker MQTT Central**: Um broker MQTT centralizado deve gerenciar as comunicações, aplicando **rate limiting** e controle de **Qualidade de Serviço (QoS)**, além de servir como uma Autoridade Certificadora para o provisionamento seguro de novos dispositivos.
 
 #### Gerenciamento
 
-* **Painel de Monitoramento Web**: O desenvolvimento de um dashboard web permitirá o monitoramento em tempo real de todos os dispositivos conectados, oferecendo uma visão clara e abrangente do estado da rede IoT.
-* **Provisionamento Automatizado de Dispositivos**: A implementação de um sistema que automatize o provisionamento de novas **BitDogLab** simplificará drasticamente a expansão da rede, tornando o processo rápido e menos propenso a erros.
-* **Política de Rotação de Chaves Criptográficas**: A definição de uma política para a rotação periódica de chaves criptográficas é uma prática de segurança fundamental. Realizá-la em períodos de menor uso (como finais de semana) minimiza interrupções e fortalece a segurança a longo prazo.
-* **Log Centralizado e Análise de Eventos**: A coleta e análise de logs de todos os dispositivos em um local centralizado é vital para identificar rapidamente anomalias, tentativas de acesso não autorizado e outros indicadores de potenciais ataques.
+  * **Dashboard Web**: Desenvolvimento de um dashboard web para monitoramento em tempo real de todos os dispositivos conectados, fornecendo uma visão abrangente da rede.
+  * **Provisionamento Automático**: Implementação de um sistema de provisionamento automático de novos dispositivos, simplificando a expansão da rede.
+  * **Rotação de Chaves Criptográficas**: Estabelecimento de uma política de rotação programada de chaves criptográficas, idealmente em momentos de menor uso, como finais de semana, para aumentar a segurança.
+  * **Logs Centralizados**: Coleta e análise de logs de todos os dispositivos em um local centralizado para identificar anomalias e eventuais tentativas de ataque.
 
-#### Implementação Gradual
+#### Implementação
 
-A implementação deve seguir uma abordagem em fases para garantir o sucesso e a estabilidade do sistema:
+A implementação deve seguir uma estratégia progressiva para garantir o sucesso e a estabilidade do sistema:
 
-* **Laboratório Piloto Inicial**: Começar com um pequeno **laboratório piloto** é crucial para validar as configurações iniciais, testar todas as funcionalidades e ajustar quaisquer detalhes antes de uma implantação maior.
-* **Expansão por Etapas**: A expansão da rede deve ser gradual, integrando e testando os dispositivos em lotes. Essa metodologia permite identificar e resolver problemas de forma controlada.
-* **Capacitação da Equipe Técnica**: O treinamento contínuo da equipe técnica em procedimentos de segurança, manutenção e resolução de problemas é essencial para a sustentabilidade da rede.
-* **Documentação Abrangente**: Manter uma documentação detalhada dos problemas recorrentes e suas respectivas soluções cria uma base de conhecimento valiosa, garantindo um fluxo operacional eficiente e a rápida resolução de incidentes.
+  * **Laboratório Piloto**: Iniciar com um laboratório piloto para validar a configuração inicial e testar as funcionalidades em pequena escala.
+  * **Expansão Gradual**: Expandir a rede gradualmente, à medida que os dispositivos forem integrados e testados, garantindo que cada nova adição funcione conforme o esperado.
+  * **Treinamento da Equipe**: Treinar a equipe técnica nos procedimentos de segurança e manutenção da rede, garantindo que eles estejam aptos a lidar com eventuais problemas.
+  * **Documentação**: Documentar os problemas comuns e as soluções encontradas, criando uma base de conhecimento para garantir um fluxo operacional eficiente e rápido.
 
-Com essa metodologia estruturada, é totalmente possível escalar um sistema IoT de poucas **BitDogLab** para centenas de unidades, mantendo um alto nível de segurança, controle e facilidade de gerenciamento em uma rede baseada na **BitDogLab e Raspberry Pi Pico W**.
+Com essa abordagem estruturada, é possível crescer de um pequeno número de dispositivos para centenas de unidades, mantendo a segurança, o controle e a facilidade de gerenciamento em uma rede IoT baseada em **BitDogLab e Raspberry Pi Pico W**.
+
 -----
 
 ## 📜 Licença
