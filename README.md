@@ -156,7 +156,7 @@ Antes do envio da mensagem (publicação), o broker Mosquitto foi inicializado c
 
 *Captura de tela do terminal mostrando o broker Mosquitto iniciado e conectado, indicando a porta de escuta e o registro de eventos de conexão e mensagens.*
 
-![Image](https://github.com/user-attachments/assets/fe99eb4b-51a9-48eb-b69a-0a293484dabb)
+-->![Image](https://github.com/user-attachments/assets/fe99eb4b-51a9-48eb-b69a-0a293484dabb)
 
 O terminal do subscriber mostra os valores recebidos sem criptografia. A saída serial da **BitDogLab** confirma a publicação realizada. Além disso, o **Wireshark** foi utilizado para capturar e analisar os pacotes MQTT, exibindo o timestamp, os endereços de origem e destino, o protocolo e o tópico MQTT ("escola/sala1/temperatura").
 
@@ -177,7 +177,6 @@ Para o teste, três janelas de terminal foram abertas simultaneamente:
 	
 *Uma imagem composta de três seções: a parte superior exibe a interface do Wireshark com pacotes MQTT capturados e filtrados, mostrando detalhes do pacote selecionado. A parte inferior esquerda mostra o terminal da BitDogLab publicando dados. A parte inferior direita exibe o terminal do `mosquitto_sub` recebendo os dados publicados.*
 
-	![Image](https://github.com/user-attachments/assets/6aa0ec3b-6e7d-4cfc-9144-004e1f2df46c)
 
 Nesta figura, observamos:
 
@@ -185,6 +184,9 @@ Nesta figura, observamos:
   * O pacote MQTT selecionado, com seu conteúdo detalhado na aba "Packet Details".
   * A tela do terminal da **BitDogLab** publicando os dados.
   * O terminal do `mosquitto_sub` recebendo os dados.
+
+	![Image](https://github.com/user-attachments/assets/6aa0ec3b-6e7d-4cfc-9144-004e1f2df46c)
+
 
 O código-fonte para a publicação da mensagem sem criptografia é o seguinte:
 
